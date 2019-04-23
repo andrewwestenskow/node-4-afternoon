@@ -16,6 +16,7 @@ app.use(session({
   saveUninitialized: false
 }))
 app.use(checkForSession)
+app.use(express.static(`${__dirname}/../build`))
 
 app.get('/api/swag', swagController.read)
 app.post('/api/login', authController.login)
